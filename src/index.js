@@ -31,30 +31,18 @@ class App extends React.Component {
                     author: quote[0].title,
                     randBg: {background: "url('https://picsum.photos/1000/450/?random&"+ new Date().getTime() +"')"}
                 });
-            }).then(this.updateQuote());
-    }
-
-    // Update the current quote with new quote
-    updateQuote() {
-        document.getElementById("text").innerHTML = this.state.quote;
-        document.getElementById("author").innerHTML = this.state.author;
-    }
-
-    // Update background into a random background
-    updateBackground() {
-        document.getElementById("quote-box").style.background = "url('https://picsum.photos/1000/450/?random')";
+            });
     }
 
     // Update the quote and background by calling the two methods
     getNewQuote() {
         this.fetchQuote();
-        this.updateBackground();
     }
 
     render() {
         return (
             <div>
-                <QuoteBox getNewQuote={this.getNewQuote} boxStyle={this.state.randBg} />
+                <QuoteBox getNewQuote={this.getNewQuote} boxStyle={this.state.randBg} author={this.state.author} quote={this.state.quote} />
             </div>
         );
     }
