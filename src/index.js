@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 const QUOTE_URL = 'https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1&callback=';
+const BG_PROP_URL = 'url(\'https://picsum.photos/1000/450/?random&';
 
 class App extends React.Component {
     constructor(props) {
@@ -10,7 +11,7 @@ class App extends React.Component {
         this.state = {
             quote: 'Constant repetition carries conviction.',
             author: 'Rober Collier',
-            randBg: {background: "url('https://picsum.photos/1000/450/?random&"+ new Date().getTime() +"')"}
+            randBg: {background: BG_PROP_URL + new Date().getTime() +"')"}
         };
         this.getNewQuote = this.getNewQuote.bind(this);
     }
@@ -29,7 +30,7 @@ class App extends React.Component {
                 this.setState({
                     quote: quote[0].content,
                     author: quote[0].title,
-                    randBg: {background: "url('https://picsum.photos/1000/450/?random&"+ new Date().getTime() +"')"}
+                    randBg: {background: BG_PROP_URL + new Date().getTime() +"')"}
                 });
             });
     }
@@ -53,12 +54,14 @@ class QuoteBox extends React.Component {
         return (
             <div id="quote-box" style={this.props.boxStyle}>
                 <span id="text" dangerouslySetInnerHTML={{__html: this.props.quote}}></span>
-                <span id="author">{this.props.author}</span>
+                <span id="author" dangerouslySetInnerHTML={{__html: this.props.author}}></span>
                 <div id="buttonsGroup">
                     <button id="new-quote" onClick={this.props.getNewQuote}><i class="fas fa-sync-alt"></i>Random Quote</button>
+                    <button id="quote" onClick={this.props.getNewQuote}><i class="fas fa-sync-alt"></i></button>
                     <a href={`https://twitter.com/intent/tweet/?text=${this.props.quote} - ${this.props.author}`}
                        target="_blank" id='tweet-quote'>
                         <button id="tweet"><i class="fab fa-twitter"></i>Tweet Quote</button>
+                        <button id="tweet-icon"><i class="fab fa-twitter"></i></button>
                     </a>
                 </div>
             </div>

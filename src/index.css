@@ -1,111 +1,158 @@
 html, body{
-  height: 100%;
-  background: #E9E9E9;
+    height: 100%;
+    background: #E9E9E9;
 }
 
 .title {
-  font-size: 50px;
-  text-align: center;
+    font-size: 50px;
+    text-align: center;
 
 }
 
 body{
-  background-repeat: no-repeat;
-  background-size: 100%;
-  font-family: monospace;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-family: monospace;
 }
 
 #quote-box{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  max-width: 50%;
-  margin: 50px auto;
-  height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 50%;
+    margin: 50px auto;
+    height: 450px;
 }
 
 #text{
-  text-align: center;
-  padding: auto;
-  margin: auto;
-  font-size: 35px;
-  color: white;
-  text-shadow:
-          -1px -1px 0 #000,
-          1px -1px 0 #000,
-          -1px 1px 0 #000,
-          1px 1px 0 #000;
-  font-family: 'Lobster Two', cursive;
-  letter-spacing: 1px;
+    text-align: center;
+    padding: auto;
+    margin: auto;
+    font-size: 35px;
+    color: white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    font-family: 'Lobster Two', cursive;
+    letter-spacing: 1px;
 }
 
 #author{
-  font-size: 20px;
-  text-align: right;
-  padding: 3%;
-  color: black;
-  color: white;
-  text-shadow:
-          -1px -1px 0 #000,
-          1px -1px 0 #000,
-          -1px 1px 0 #000,
-          1px 1px 0 #000;
-  font-family: 'Lobster Two', cursive;
-  letter-spacing: 1px;
+    font-size: 20px;
+    text-align: right;
+    padding: 3%;
+    color: black;
+    color: white;
+    text-shadow:
+            -1px -1px 0 #000,
+            1px -1px 0 #000,
+            -1px 1px 0 #000,
+            1px 1px 0 #000;
+    font-family: 'Lobster Two', cursive;
+    letter-spacing: 1px;
 }
 
 #new-quote{
-  background: #4f38ff;
-  height: 40px;
-  border: none;
-  border-radius: 5%;
-  font-family: monospace;
-  font-size: 20px;
-  border-radius: 25px;
-  background-color: #7dbe5b;
-  width: 10em;
-  cursor: pointer;
-  padding: auto;
-  margin: auto;
+    height: 40px;
+    border: none;
+    border-radius: 5%;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 25px;
+    background: #7dbe5b;
+    width: 10em;
+    cursor: pointer;
+    padding: auto;
+    margin: auto;
 }
 
 #new-quote:hover {
-  background-color: #6DB448;
-}
-
-button .fab fa-twitter {
-  padding: 5px;
+    background: #6DB448;
 }
 
 #tweet{
-  background: #52A7E7;
-  border:none;
-  height: 40px;
-  font-family: monospace;
-  font-size: 20px;
-  border-radius: 25px;
-  width: 10em;
-  cursor: pointer;
-  padding: auto;
-  margin: auto;
+    background: #52A7E7;
+    border:none;
+    height: 40px;
+    font-family: monospace;
+    font-size: 20px;
+    border-radius: 25px;
+    width: 10em;
+    cursor: pointer;
+    padding: auto;
+    margin: auto;
 }
 
 a {
-  display: block;
-  width: wrap-content;
-  padding: auto;
-  margin: 10px auto 10px auto;
+    display: block;
+    width: wrap-content;
+    padding: auto;
+    margin: 10px auto 10px auto;
 }
 
 #tweet:hover {
-  background-color: #0C7ABF;
+    background: #0C7ABF;
 }
 
 #buttonsGroup {
-  display:flex;
-  -webkit-user-select: none; /* Safari 3.1+ */
-  -moz-user-select: none; /* Firefox 2+ */
-  -ms-user-select: none; /* IE 10+ */
-  user-select: none; /* Standard syntax */
-  text-align: center;
+    display:flex;
+    -webkit-user-select: none; /* Safari 3.1+ */
+    -moz-user-select: none; /* Firefox 2+ */
+    -ms-user-select: none; /* IE 10+ */
+    user-select: none; /* Standard syntax */
+    text-align: center;
+}
+
+#tweet-icon {
+    background: #52A7E7;
+    display: none;
+    border-radius: 50%;
+    font-size: 25px;
+    margin: auto;
+    border:none;
+    cursor: pointer;
+}
+
+#tweet-icon:hover {
+    background: #0C7ABF;
+}
+
+#quote {
+    background: #7dbe5b;
+    display: none;
+    border-radius: 50%;
+    font-size: 25px;
+    margin: auto;
+    border:none;
+    cursor: pointer;
+}
+
+#quote:hover {
+    background-color: #6DB448;
+}
+
+@media (max-width: 900px) {
+    .title {
+        font-size: 40px;
+    }
+    #text {
+        font-size: 24px;
+    }
+    #author {
+        font-size: 13px;
+    }
+    #tweet-icon {
+        display: block;
+    }
+    #tweet {
+        display: none;
+    }
+    #new-quote {
+        display: none;
+    }
+    #quote {
+        display: block;
+    }
 }
