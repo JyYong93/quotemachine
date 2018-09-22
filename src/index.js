@@ -52,7 +52,7 @@ class QuoteBox extends React.Component {
     render() {
         return (
             <div id="quote-box" style={this.props.boxStyle}>
-                <span id="text">{this.props.quote}</span>
+                <span id="text" dangerouslySetInnerHTML={{__html: this.props.quote}}></span>
                 <span id="author">{this.props.author}</span>
                 <div id="buttonsGroup">
                     <button id="new-quote" onClick={this.props.getNewQuote}><i class="fas fa-sync-alt"></i>Random Quote</button>
